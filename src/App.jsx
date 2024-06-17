@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectTodos } from "./slices/todosSlice";
 import "./App.css";
+import TaskList from "./components/TaskList";
 
 function App() {
     const todos = useSelector(selectTodos);
@@ -9,20 +10,10 @@ function App() {
 
     return (
         <>
-            <h1>Redux App</h1>
+            <h1>Todo List</h1>
 
             <section>
-                {todos &&
-                    todos.map((todo) => {
-                        return (
-                            <div key={todo.id} style={{ display: "flex" }}>
-                                <input type="checkbox" />
-                                <button>edit</button>
-                                <button>delete</button>
-                                <div>{todo.title}</div>
-                            </div>
-                        );
-                    })}
+                <TaskList />
             </section>
         </>
     );
