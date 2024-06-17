@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 // import { IoClose } from "react-icons/io5";
 // import { Modal } from "../styles/Modal.styled";
 import { updateTask } from "../../slices/todosSlice";
-
+import styles from "./UpdateTaskForm.module.css";
 function UpdateTaskForm({ task, setShowModal }) {
     const dispatch = useDispatch();
     const [newTaskContent, setNewTaskContent] = useState(task.title);
@@ -20,7 +20,7 @@ function UpdateTaskForm({ task, setShowModal }) {
         // <>
         //     <h1>MODAL</h1>
         // </>
-        <div>
+        <div className={styles.modal}>
             <div className="closeIcon">
                 <button onClick={() => setShowModal(false)} />
             </div>

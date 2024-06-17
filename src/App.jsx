@@ -6,7 +6,6 @@ import TaskList from "./components/TaskList";
 function App() {
     const todos = useSelector(selectTodos);
     // const dispatch = useDispatch();
-    console.log(todos);
 
     return (
         <>
